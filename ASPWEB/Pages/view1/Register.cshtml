@@ -1,0 +1,22 @@
+﻿@page
+@model ASPWEB.Pages.view1.RegisterModel
+@{
+}
+
+<h2>Register</h2>
+
+<form method="POST">
+    <div>
+        <label style="color: red;">@ViewBag.ErrorMessage</label>
+        <br />
+        Email: <input type="text" id="txtEmail" />
+        <br />
+        Password: <input type="password" id="txtPassword" />
+        <br />
+        Confirm Password: <input type="password" id="txtConfirmPassword" />
+        <br />
+        <input type="button" value="Register" onclick="btnRegister_Click()" />
+        <br />
+        <a asp-page="/view1/Index">Already have an account? Login here</a>
+    </div>
+</form>

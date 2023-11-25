@@ -1,0 +1,13 @@
+﻿@page
+@model IndexModel
+@{
+   
+}
+
+<h2>Today's Modules</h2>
+@foreach (var module in ViewBag.ModulesForToday)
+{
+        <p>@module.ModuleName</p>
+}
+
+

@@ -1,0 +1,115 @@
+﻿@page
+
+@model ASPWEB.Pages.view1.moduleModel
+
+@{
+    Layout = null;
+}
+
+<h2>Enter modules</h2>
+
+<form method="post">
+
+    <table>
+        @for (var i = 0; i < Model.ListModule.Count; i++)
+        {
+            <tr>
+                <td>
+                    <label asp-for="ListModule[i].ID" class="control-label"></label>
+                </td>
+                <td>
+                    <input asp-for="ListModule[i].ID" class="form-control" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label asp-for="ListModule[i].Code" class="control-label"></label>
+                </td>
+                <td>
+                    <input asp-for="ListModule[i].Code" class="form-control" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label asp-for="ListModule[i].Name" class="control-label"></label>
+                </td>
+                <td>
+                    <input asp-for="ListModule[i].Name" class="form-control" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label asp-for="ListModule[i].NumOfCredits" class="control-label"></label>
+                </td>
+                <td>
+                    <input asp-for="ListModule[i].NumOfCredits" class="form-control" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="ListModule[i].ClassHours" class="control-label"></label>
+                </td>
+                <td>
+                    <input asp-for="ListModule[i].ClassHours" class="form-control" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label asp-for="ListModule[i].NumOfWeeks" class="control-label"></label>
+                </td>
+                <td>
+                    <input asp-for="ListModule[i].NumOfWeeks" class="form-control" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label asp-for="ListModule[i].StartDate" class="control-label"></label>
+                </td>
+                <td>
+                    <input asp-for="ListModule[i].StartDate" class="form-control" />
+                </td>
+            </tr>
+
+            
+
+            <tr>
+                <td>
+                    <label asp-for="ListModule[i].SelfStudyHours" class="control-label"></label>
+                </td>
+                <td>
+                    <input asp-for="ListModule[i].SelfStudyHours" class="form-control" />
+                </td>
+            </tr>
+        }
+
+        <tr>
+            <td>
+                <label asp-for="PlannedDay" class="control-label"></label>
+            </td>
+            <td>
+                <select asp-for="PlannedDay" asp-items="Html.GetEnumSelectList<DayOfWeek>()" class="form-control">
+                    <option value="">Select a day</option>
+                </select>
+                <span asp-validation-for="PlannedDay" class="text-danger"></span>
+            </td>
+        </tr>
+    </table>
+     <div class="form-group">
+        <input type="submit" value="Submit" />
+        <input type="button" value="Print" onclick="printForm()" />
+    </div>
+
+</form>
+
+@section Scripts {
+    <script>
+        function printForm() {
+            window.print();
+        }
+    </script>
+}

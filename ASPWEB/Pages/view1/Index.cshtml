@@ -1,0 +1,27 @@
+﻿@page
+@model ASPWEB.Pages.view1.IndexModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        <h2>Login</h2>
+
+        <label style="color: red;">@ViewBag.ErrorMessage</label>
+        <br />
+        Username: <input type="text" id="txtUsername" />
+        <br />
+        Password: <input type="password" id="txtPassword" />
+        <br />
+      
+        <a asp-page="/view1/Register">Don't have an account? Register here</a>
+    </div>
+</body>
+</html>
